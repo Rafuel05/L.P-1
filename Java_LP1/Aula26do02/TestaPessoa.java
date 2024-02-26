@@ -4,9 +4,9 @@ public class TestaPessoa {
 	public static void main(String[] args) {
 		int choice =0, choice2  =0;
 		int i = 0;
-		Pessoa vetor [] = new Peaple[10];
+		Pessoa vetor [] = new Pessoa[10];
 		while (choice != 5) {
-		Pessoa p1 = new Peaple();
+		Pessoa p1 = new Pessoa();
 		System.out.println("Bem vindo ao sistema de cadastro de pessoas:");
 		System.out.print("1-Cadastrar \n2-Alterar \n3-Excluir \n4-Consultar \n5-Sair");
 		choice = Teclado.lerInteiro("\nDigite o codigo:");
