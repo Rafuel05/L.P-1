@@ -1,13 +1,26 @@
 package Java_LP1.Exercicios_Cap4;
 
 public class Banco {
-    String nomeTitular;
-    int numero;
-    String agencia;
-    double saldo;
-    Data dataDeAbertura;
+    private int identificador;
+    private static int proxIdentificador;
+
+    private String nomeTitular;
+    private int numero;
+    private String agencia;
+    private double saldo;
+    private Data dataDeAbertura;
     //Banco.saldo	=	1234; nao faz sentido (exercicio 8)
     //Banco.calculaRendimento(); nao faz sentido (exercicio 8)
+    public  Banco (String nomeTitular){
+        this.nomeTitular = nomeTitular;
+        identificador = proxIdentificador++;
+    }
+    public Banco(){
+
+    }
+    public int getIdentificador() {
+        return this.identificador;
+    }
 
     public void saque (double v)
     {
@@ -31,4 +44,34 @@ public class Banco {
        dados += dataDeAbertura.formatandoData(); 
        return dados;
      }
+    public String getNomeTitular() {
+        return nomeTitular;
+    }
+    public void setNomeTitular(String nomeTitular) {
+        this.nomeTitular = nomeTitular;
+    }
+    public int getNumero() {
+        return numero;
+    }
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    public String getAgencia() {
+        return agencia;
+    }
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
+    }
+    public double getSaldo() {
+        return saldo;
+    }
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+    public Data getDataDeAbertura() {
+        return dataDeAbertura;
+    }
+    public void setDataDeAbertura(Data dataDeAbertura) {
+        this.dataDeAbertura = dataDeAbertura;
+    }
  }

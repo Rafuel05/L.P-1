@@ -12,8 +12,8 @@ public class TestaPessoa {
 		choice = Teclado.lerInteiro("\nDigite o codigo:");
 		switch (choice) {
 		case 1:
-			p1.nome = Teclado.lerString("Digite o nome:");
-			p1.cpf = Teclado.lerString("Digite o cpf:");
+			p1.setNome(Teclado.lerString("Digite o nome:"));
+			p1.setCpf(Teclado.lerString("Digite o cpf:"));
 			vetor[i] = p1;
 			i++;
 			break;
@@ -24,20 +24,20 @@ public class TestaPessoa {
 			auxCpf = Teclado.lerString("->");
 			for (int j = 0; j < vetor.length; j++) {
 				if(vetor[j] != null) {
-				if (vetor[j].cpf.equals(auxCpf)) {
-					System.out.println("Nome:"+vetor[j].nome+" CPF:"+vetor[j].cpf);
+				if (vetor[j].getCpf().equals(auxCpf)) {
+					System.out.println("Nome:"+vetor[j].getNome()+" CPF:"+vetor[j].getCpf());
 					System.out.print("O que deseja modificar?\n1-Nome\n2-CPF\n");
 					choice2= Teclado.lerInteiro("Digite o Codigo:");
 					if (choice2 == 1) {
 						String auxNome;
 						auxNome = Teclado.lerString("Digite o novo nome:");
-						vetor[j].nome = auxNome;
+						vetor[j].setNome(auxNome);
 						break;
 					}
 					if ( choice2 == 2) {
 						String auxCpf2;
 						auxCpf2 = Teclado.lerString("Digite o novo CPF:");
-						vetor[j].cpf = auxCpf2;
+						vetor[j].setCpf(auxCpf2);
 						break;
 					}
 					if ( choice2!= 1 & choice2 != 2) {
@@ -55,10 +55,10 @@ public class TestaPessoa {
 			auxCpf3 = Teclado.lerString("->");
 			for (int j = 0; j < vetor.length; j++) {
 				if(vetor[j] != null) {
-				if (vetor[j].cpf.equals(auxCpf3)) {
-					System.out.println("Pessoa exluida: Nome:"+vetor[j].nome+" CPF:"+vetor[j].cpf);
-					vetor[j].nome = null;
-					vetor[j].cpf = null;
+				if (vetor[j].getCpf().equals(auxCpf3)) {
+					System.out.println("Pessoa exluida: Nome:"+vetor[j].getNome()+" CPF:"+vetor[j].getCpf());
+					vetor[j].setNome(null); 
+					vetor[j].setCpf(null); 
 					vetor[j] = null;
 					break;
 				}
@@ -69,7 +69,7 @@ public class TestaPessoa {
 			
 			for (int k =0; k< vetor.length; k++) {
 				if(vetor[k] != null)
-				System.out.println("Nome:"+ vetor[k].nome+ "\\" + vetor[k].cpf);
+				System.out.println("Nome:"+ vetor[k].getNome()+ "\\" + vetor[k].getCpf());
 			}
 			break;
 			
